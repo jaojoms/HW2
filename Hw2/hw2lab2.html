@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์มจองทัวร์</title>
+</head>
+<body>
+    <form action="form-echo.php" method="get">
+        <fieldset>
+            <h1>แบบฟอร์มจองทัวร์</h1>
+            <fieldset>
+                <legend>ข้อมูลทั่วไป</legend>
+                <label for="fn-ln">ชื่อ-สกุล:</label>
+                <br>
+                <input type="text" name="fn-ln" id="fn-ln" placeholder="กรอกชื่อ-สกุล"required>
+                *
+                <br>
+                <label for="Email">Email:</label><br>
+                <input type="email" name="email" id="mail">
+                *
+                <br>
+                <label for="phonenumber">โทรศัพทร์:</label><br>
+                <input type="tel" name="phonenumber" value="+66">
+                *
+                <br>
+                <label for="address">ที่อยู่:</label><br>
+                <textarea name="address" id="ad" cols="50" rows="5"></textarea>
+                <br>
+                <label for="psw">รหัสไปรษณีย์:</label>
+                <input type="text" name="post code" id="pswcode" maxlength="5"size="5"pattern="[0-9]">
+                <br>
+                <label for="Imgbook">รูปผู้จอง:</label>
+                <input type="file" name="imgbook" id="book">
+            </fieldset>
+            <fieldset>
+                <legend>ข้อมูลเข้าสู่ระบบ</legend>
+                <label for="Username">Username:</label>
+                <br>
+                <input type="text" name="username" id="usname"minlength="8"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                <br>
+                <label for="set">ประกอบด้วยตัวเลข ตัวอักษร หรือ_ตั้งแต่ 8 ตัวขึ้นไป</label>
+                <br><br>
+                <label for="psw">Password:</label>
+                <br>
+                <input type="password" name="psw" id="psw" minlength="8">
+                <br>
+                <label for="set">ประกอบด้วยอักขระอะไรก็ได้ 8 ตัวขึ้นไป</label>
+            </fieldset>
+            <fieldset>
+                <legend>ข้อมูลที่ต้องการ</legend>
+                <label for="package">แพ็คเกจทัวร์:
+                    <select name="country">
+                        <option selected="selected">--selected--</option>
+                        <option value="japan">japan</option>
+                        <option value="England">England</option>
+                        <option value="USA">USA</option>
+                        <option value="Thai">Thailand</option>
+                        <option value="Korea">Korea</option>
+                    </select>
+                </label>
+                <br>
+                <label for="daytour">วันที่เดินทาง:</label>
+                <input type="date" name="fdate" id="fdate">
+                <br>
+                <label for="numbertour">จำนวนผู้เดินทาง:</label>
+                <input type="number" name="tournum" id="tournum"min="1"max="10">
+                <br>
+                <label for="travel">เน้นการท่องเที่ยวแบบใด?</label>
+                <br>
+                <input type="checkbox" name="travel" id="trv1">
+                <label for="shopping">ชอปปิ้ง</label>
+                <br>
+                <input type="checkbox" name="travel" id="trv2">
+                <label for="nature">ธรรมชาติ</label>
+                <br>
+                <input type="checkbox" name="travel" id="trv3">
+                <label for="sea">ทะเล</label>
+                <br>
+            </fieldset>
+            <label for="ok">ยอมรับเงื่อนไขและข้อตกลง
+                <input type="radio" name="agree" id="checked" value="yes"> 
+                <label for="agr">I agree</label>
+                <input type="radio" name="disagree" id="disagr" value="no">
+                <label for="disgre">I disagree</label>           
+            </label>
+            <input type="submit" value="จอง">
+        </fieldset>
+    </form>
+</body>
+</html>
